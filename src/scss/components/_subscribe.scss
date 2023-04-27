@@ -1,0 +1,119 @@
+.subscribe {
+   margin-top: 30px;
+   @media (max-width: 600px) {
+      background-color: $defaultColor;
+      padding: 30px 0px;
+      margin-top: 0;
+   }
+   &__inner {
+      position: relative;
+      @media (max-width: 600px) {
+         position: static;;
+      }
+   }
+   &__image {
+      @media (max-width: 600px) {
+         display: none;
+      }
+   }
+   &__image img {
+      max-width: 100%;
+   }
+   &__content {
+      position: absolute;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      align-items: center;
+      top: 50%;
+      width: 100%;
+      transform: translateY(-50%);
+      padding: 0 80px 0 70px;
+      gap: 20px;
+      @media (max-width: 1050px) {
+         padding: 0 35px;
+         flex-direction: column;
+      }
+      @media (max-width: 600px) {
+         position: static;
+         transform: none;
+         padding: 0;
+      }
+      h2 {
+         @media (max-width: 600px) {
+            text-align: center;
+         }
+      }
+      h2 br {
+         @media (max-width: 1050px) {
+            display: none;
+         }
+         @media (max-width: 600px) {
+            display: block;
+         }
+      }
+   }
+   & form {
+      display: flex;
+      gap: 10px;
+      @media (max-width: 600px) {
+         flex-wrap: wrap;
+         gap: 20px;
+         justify-content: center;
+      }
+      & input {
+         border: 1px solid #CCCCCC;
+         border-radius: 16px;
+         @include font(400, 1.8rem, 1.6, 0.36px);
+         color: $textColor;
+         font-family: $openSansFont;
+         padding: 0 30px;
+         width: 350px;
+         box-sizing: border-box;
+         transition: all 0.1s linear;
+         transform: translateY(-3px);
+         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+         @media (max-width: 940px) {
+            font-size: 1.4rem;
+         }
+         @media (max-width: 600px) {
+            height: 60px;
+            width: 100%;
+         }
+         &:focus, &:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+         }
+         &::placeholder {
+            color: $textColor;
+         }
+      }
+   }
+   @extend %btn;
+   .btn {
+      width: 197px;
+      background: #274C5B;
+      border: 1px solid #274C5B;
+      color: $white;
+      @media (max-width: 940px) {
+         width: 165px;
+         height: 70px;
+      }
+      @media (max-width: 740px) {
+         width: 145px;
+         height: 60px;
+      }
+      @media (max-width: 600px) {
+         background-color: $yellow;
+         color: $defaultColor;
+      }
+      &:hover {
+         & .btn__text {
+            text-shadow: 0px 0px 2.5px $white;
+            @media (max-width: 600px) {
+               text-shadow: 0px 1px 1.5px $defaultColor;
+            }
+         }
+      }
+   }
+}

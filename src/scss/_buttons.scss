@@ -1,0 +1,132 @@
+%btn
+.btn {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   padding: 21px 9px 22px 33px;
+   background-color: $yellow;
+   border: 1px solid $yellow;
+   border-radius: 16px;
+   color: $defaultColor;
+   transform: translateY(-3px);
+   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+   transition: all 0.1s linear;
+   @media (max-width: 940px) {
+      height: 70px;
+   }
+   @media (max-width: 740px) {
+      padding-left: 20px;
+      height: 60px;
+   }
+   &:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      & .btn__text {
+         text-shadow: 0px 1px 1.5px $defaultColor;
+      }
+      & .btn__image {
+         transform: scale(-1, 1);
+      }
+   }
+
+   &__text {
+      transition: text-shadow 0.1s linear;
+      @include font(400, 1.9rem, 1.7, 0.36px);
+      font-family: $robotoFont;
+      @media (max-width: 940px) {
+         font-size: 1.4rem;
+      }
+   }
+   &__image {
+      position: relative;
+      display: inline-block;
+      height: 38px;
+      width: 38px;
+      background-color: #335B6B;
+      border-radius: 50%;
+      transition: transform 0.2s linear;
+      &::before {
+         content: '';
+         position: absolute;
+         width: 15px;
+         height: 11px;
+         display: block;
+         background-image: url(./images/arrow-right.svg);
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+      }
+   }
+}
+//burger
+#menu-toggle {
+   display: none;
+   @media (max-width: 877px) {
+      &:checked ~ .menu-btn {
+         & > span {
+            transform: rotate(45deg);
+            background-color: $defaultColor;
+            top: 30px;
+            left: 50%;
+            transition: top 0.3s;
+            position: fixed;
+            width: 5px;
+            height: 50px;
+         }
+         & > span::before {
+            transform: rotate(270deg);
+            left: 0px;
+            width: 5px;
+            background-color: $defaultColor;
+            position: fixed;
+            height: 50px;
+         }
+         & > span::after {
+            opacity: 0;
+         }
+      }
+      &:checked ~ .list {
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+         gap: 25px;
+      }
+   }
+}
+.menu-btn {
+   display: none;
+   width: 60px;
+   height: 60px;
+   position: relative;
+   top: 0px;
+   right: -5px;
+   padding-left: 20px;
+   cursor: pointer;
+   z-index: 1100;
+   @media (max-width: 877px) {
+      display: block;
+   }
+   & > span, & > span::before, & > span::after {
+      position: absolute;
+      display: block;
+      width: 4px;
+      height: 60px;
+      border-radius: 5px;
+      background-color: $defaultColor;
+   }
+   & > span {
+      transform: rotate(90deg);
+      top: 0px;
+      left: 23px;
+      background-color: $green;
+   }
+   & > span::before {
+      content: '';
+      right: 13px;
+   }
+   & > span::after {
+      content: '';
+      left: 13px;
+   }
+}

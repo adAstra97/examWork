@@ -1,0 +1,173 @@
+.header {
+   padding: 45px 0;
+   @media (max-width: 1112px) {
+      padding: 25px 0;
+   }
+   @media (max-width: 840px) {
+      padding: 15px 0;
+   }
+   &__inner {
+      font-family: $robotoFont;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+   }
+   &__col:first-child {
+      display: flex;
+      align-items: center;
+      gap: 120px;
+      @media (max-width: 1055px) {
+         width: 100%;
+         justify-content: space-between;
+      }
+   }
+   .list {
+      display: flex;
+      @media (max-width: 877px) {
+         display: none;
+         position: fixed;
+         top: 0;
+         right: 0;
+         left: 0;
+         height: 100%;
+         background: rgb(242,240,241);
+         background: linear-gradient(180deg, rgba(242,240,241,1) 0%, rgba(239,246,241,1) 100%);
+         z-index: 1000;
+         animation: 0.25s linear menu;
+      }
+      &__item:not(:last-child) {
+         margin-right: 40px;
+         @media (max-width: 877px) {
+            margin: 0;
+         }
+      }
+      &__item:nth-child(4) {
+         margin-right: 60px;
+         @media (max-width: 877px) {
+            margin: 0;
+         }
+      }
+      &__link {
+         position: relative;
+         @include font(400, 2rem, 1.6, 0.36px);
+         color: $defaultColor;
+         padding: 5px 0;
+         transition: color 0.4s linear;
+         @media (max-width: 1112px) {
+            font-size: 1.8rem;
+         }
+         @media (max-width: 877px) {
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: $defaultColor;
+         }
+         &:hover,
+         &:focus {
+            color: $green;
+         }
+         &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            right: 0;
+            bottom: -3px;
+            width: 0;
+            height: 2px;
+            background-color: $green;
+            transition: width 0.6s;
+         }
+         &:hover::after,
+         &:focus::after {
+            width: 100%;
+            left: 0;
+         }
+      }
+   }
+}
+
+.cart {
+   display: flex;
+   align-items: center;
+   padding: 5px 30px 5px 10px;
+   border: 1px solid #D4D4D4;
+   border-radius: 33px;
+   color: $defaultColor;
+   position: relative;
+   overflow: hidden;
+   transition: all 0.3s;
+   @media (max-width: 1055px) {
+      position: fixed;
+      right: -70px;
+      bottom: -20px;
+      transform: translateY(-50%);
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      z-index: 1000;
+      border: 3px solid transparent;
+      padding: 5px 20px 5px 10px;
+   }
+   @media (max-width: 877px) {
+      bottom: -20px;
+   }
+   &:hover,
+   &:focus {
+      background-color: #e3f1e5;
+      @media (max-width: 1055px) {
+         right: 0;
+         bottom: -20px;
+         border-bottom: 3px solid #4b4b4b39;
+         border-left: 3px solid #4b4b4b39;
+         border-top: 3px solid #4b4b4b39;
+      }
+      @media (max-width: 877px) {
+         bottom: -20px;
+      }
+      & .cart__text {
+         @media (max-width: 1055px) {
+            visibility: visible;
+         }
+      }
+      & .cart__amount {
+         @media (max-width: 1055px) {
+            visibility: visible;
+         }
+      }
+   }
+   &__image {
+      position: relative;
+      display: inline-block;
+      background: $defaultColor;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      @media (max-width: 1055px) {
+         width: 70px;
+         height: 70px;
+         border: 3px solid #ffffff80;
+      }
+      &::before {
+         content: '';
+         position: absolute;
+         background: url(./images/cart.svg) no-repeat;
+         width: 26px;
+         height: 24px;
+         top: 50%;
+         transform: translate(-50%, -50%);
+         left: 50%;
+      }
+   }
+   &__text {
+      @include font(400, 1.7rem, 1.7, 0.36px);
+      margin: 0 10px;
+      @media (max-width: 1055px) {
+         visibility: hidden;
+      }
+   }
+   &__amount {
+      @include font(400, 1.8rem, 1, 0.36px);
+      @media (max-width: 1055px) {
+         visibility: hidden;
+      }
+   }
+}

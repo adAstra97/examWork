@@ -1,0 +1,118 @@
+.products {
+   text-align: center;
+   padding: 125px 0 140px;
+   @media (max-width: 1112px) {
+      padding: 100px 0;
+   }
+   @media (max-width: 840px) {
+      padding: 70px 0;
+   }
+   @media (max-width: 600px) {
+      padding: 55px 0;
+   }
+   @media (max-width: 500px) {
+      padding: 40px 0;
+   }
+   & h3 {
+      margin-bottom: 37px;
+      @media (max-width: 500px) {
+         margin-bottom: 20px;
+      }
+   }
+   &__list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(auto, 446px));
+      gap: 20px;
+      justify-content: center;
+      text-align: start;
+      @media (max-width: 1120px) {
+         grid-template-columns: minmax(auto, 375px) minmax(auto, 375px);
+      }
+      @media (max-width: 629px) {
+         grid-template-columns: minmax(auto, 290px);
+      }
+   }
+   &__item {
+      background-color: #F9F8F8;
+      border-radius: 30px;
+      padding: 30px;
+      cursor: pointer;
+      transition: 0.2s box-shadow linear;
+      @media (max-width: 740px) {
+         padding: 20px;
+      }
+      &:hover {
+         box-shadow: -12px 0 20px -12px rgba(0, 0, 0, 0.35), 12px 0 20px -12px rgba(0, 0, 0, 0.35);
+      }
+      &--main {
+         border-bottom: 1px solid #D4D4D4;
+         padding-bottom: 11px;
+         @media (max-width: 780px) {
+            padding-bottom: 5px;
+         }
+      }
+      &--bottom {
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+         margin-top: 11px;
+         @media (max-width: 780px) {
+            margin-top: 5px;
+            align-items: flex-end;
+         }
+      }
+   }
+   &__img {
+      margin-bottom: 20px;
+      @media (max-width: 780px) {
+         margin-bottom: 0;
+      }
+      & img {
+         max-width: 100%;
+      }
+   }
+   &__sub {
+      @include font(700, 1.5rem, 1.8, 0.36px);
+      font-family: $openSansFont;
+      color: $white;
+      background-color: $defaultColor;
+      padding: 5px 20px;
+      display: inline-block;
+      border-radius: 8px;
+      @media (max-width: 780px) {
+         font-size: 1rem;
+      }
+   }
+   &__name {
+      @include font(400, 2.2rem, 1.6, 0.36px);
+      font-family: $robotoFont;
+      color: $defaultColor;
+      @media (max-width: 780px) {
+         font-size: 1.7rem;
+      }
+   }
+   &__price--old {
+      @include font(400, 1.7rem, 1.91, 0.36px);
+      font-family: $openSansFont;
+      color: $oldPriceColor;
+      text-decoration: line-through;
+      margin-right: 15px;
+      @media (max-width: 780px) {
+         font-size: 1.2rem;
+      }
+   }
+   &__price--new {
+      @include font(700, 1.8rem, 1.8, 0.36px);
+      color: $defaultColor;
+      font-family: $openSansFont;
+      @media (max-width: 780px) {
+         font-size: 1.3rem;
+      }
+   }
+   &__rate {
+      background: url(./images/star.svg) repeat-x;
+      height: 19px;
+      width: 76px;
+      display: inline-block;
+   }
+}

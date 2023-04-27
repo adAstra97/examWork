@@ -1,0 +1,26 @@
+header.header#home
+   .container
+      .header__inner
+         .header__col
+            .logo
+               img(src="./images/logo.svg", alt="Logo")
+            nav.nav
+               input(type="checkbox" id="menu-toggle")
+               label(class="menu-btn" for="menu-toggle")
+                  span
+               ul.list
+                  li.list__item
+                     a.list__link(href="#home") Home
+                  li.list__item
+                     a.list__link(href="#about") About Us
+                  li.list__item
+                     a.list__link(href="#shop") Shop
+                  li.list__item
+                     a.list__link(href="#pages") Pages
+                  li.list__item
+                     a.list__link(href="#contact") Contact Us
+         .header__col
+            a.header__cart.cart(href="#")
+               span.cart__image
+               span.cart__text Cart
+               span.cart__amount 0

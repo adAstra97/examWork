@@ -1,0 +1,145 @@
+.testimonial {
+   background: url(./images/customer-bg.png) top center repeat-y;
+   background-size: 100%;
+   padding: 130px 0 152px;
+   @media (max-width: 1112px) {
+      padding: 100px 0;
+   }
+   @media (max-width: 840px) {
+      padding: 70px 0;
+   }
+   @media (max-width: 600px) {
+      padding: 55px 0;
+   }
+   @media (max-width: 500px) {
+      padding: 40px 0;
+   }
+   &__top {
+      text-align: center;
+      border-bottom: 2px solid #E0E0E0;
+      width: 70%;
+      margin: 0 auto;
+      padding-bottom: 93px;
+      @media (max-width: 1112px) {
+         padding-bottom: 60px;
+      }
+      @media (max-width: 840px) {
+         padding-bottom: 30px;
+      }
+      @media (max-width: 600px) {
+         border-bottom: none;
+      }
+      @media (max-width: 500px) {
+         width: 90%;
+         padding-bottom: 0;
+      }
+   }
+   & h3 {
+      margin-bottom: 60px;
+      @media (max-width: 840px) {
+         margin-bottom: 25px;
+      }
+   }
+   &__review {
+      display: flex;
+      flex-direction: column;
+   }
+   &__photo {
+      background: url(./images/client.png) no-repeat;
+      width: 115px;
+      height: 115px;
+      align-self: center;
+      margin-bottom: 20px;
+   }
+   &__stars {
+      background: url(./images/big-star.svg) repeat-x;
+      width: 110px;
+      height: 27px;
+      align-self: center;
+      margin-bottom: 30px;
+   }
+   &__name {
+      @include font(700, 2.6rem, 1.3, 0.36px);
+      font-family: $robotoFont;
+      color: $defaultColor;
+      margin-top: 25px;
+      @media (max-width: 425px) {
+         font-size: 2rem;
+      }
+   }
+   &__sub {
+      @include font(400, 1.4rem, 2, 0.36px);
+      font-family: $openSansFont;
+      color: $textColor;
+   }
+   &__bottom {
+      padding-top: 105px;
+      @media (max-width: 1112px) {
+         padding-top: 60px;
+      }
+      @media (max-width: 840px) {
+         padding-top: 35px;
+      }
+      @media (max-width: 600px) {
+         display: none;
+      }
+   }
+   &__info {
+      display: flex;
+      gap: 35px;
+      justify-content: center;
+      flex-wrap: wrap;
+      @media (max-width: 940px) {
+         display: grid;
+         grid-template-columns: minmax(200px, auto) minmax(200px, auto);
+      }
+   }
+   &__info--circle {
+      background-color: #F1F1F1;
+      border-radius: 50%;
+      border: 5px solid #FFFFFF;
+      width: 240px;
+      height: 240px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.49);
+      transition: all 0.15s linear;
+      cursor: pointer;
+      @media (max-width: 1112px) {
+         width: 200px;
+         height: 200px;
+      }
+      &:hover {
+         box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+         &::after {
+            border: 6px solid $yellow;
+         }
+      }
+
+      &::after {
+         content: '';
+         position: absolute;
+         width: 104%;
+         height: 104%;
+         border-radius: 50%;
+         border: 6px solid $green;
+         transition: all 0.15s linear;
+      }
+   }
+   &__info--num {
+      @include font(700, 4.2rem, 1.3, 0.36px);
+      color: $defaultColor;
+      font-family: $robotoFont;
+      @media (max-width: 1112px) {
+         font-size: 3rem;
+      }
+   }
+   &__info--sub {
+      @include font(700, 1.8rem, 1.8, 0.36px);
+      color: $defaultColor;
+      font-family: $openSansFont;
+   }
+}

@@ -1,0 +1,133 @@
+doctype html
+html(lang="en")
+   head
+      meta(charset="UTF-8")
+      meta(http-equiv="X-UA-Compatible" content="IE=edge")
+      meta(name="viewport", content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover")
+      meta(name="author" content="Veronika Levchuk")
+      meta(name="description" content="Exam work")
+      link(rel="apple-touch-icon" sizes="180x180" href="./images/favicon/apple-touch-icon.png")
+      link(rel="icon" type="image/png" sizes="32x32" href="./images/favicon/favicon-32x32.png")
+      link(rel="icon" type="image/png" sizes="16x16" href="./images/favicon/favicon-16x16.png")
+      link(rel="manifest" href=".images/favicon/site.webmanifest")
+      link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css")
+      link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css")
+      link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css")
+      link(rel="stylesheet" href="./main.css")
+      title Organic
+   body
+      .site
+         include src/pug/_header.pug
+
+         main.main
+            section.hero
+               .container
+                  .hero__inner
+                     .hero__col
+                        .subtitle Made With Nature
+                        h1 Welcome to the world of nature and organic.
+                        a.btn(href="#")
+                           span.btn__text Explore Now
+                           span.btn__image
+            section.advert
+               .container
+                  .advert__inner
+                     .advert__col
+                        span.subtitle Natural!!
+                        span.advert__title Get Garden<br>Fresh Fruits
+                     .advert__col
+                        span.subtitle Offer!!
+                        spaan.advert__title Get 10% off<br>on Vegetables
+
+            section.about#about
+               .container
+                  .about__inner
+                     .about__image
+                        img(src="./images/about.png", alt="Fruit")
+                     .about__info
+                        .about__row
+                           span.subtitle About Us
+                           h3 We Believe in Organic<br>Foods For Strong Health
+                           p.text Welcome to the world of natural and organic. Here you can discover the bounty of nature. We have grown on the principles of health, and care. We aim to give our customers a healthy chemical-free meal for perfect nutrition.
+                        .about__row
+                           span.about__sub Organic Foods Only
+                           p.text The Product that you ordered will be verified that we have or not if have we will start to move on with the next step.
+                        .about__row
+                           span.about__sub Quality Standards
+                           p.text Once your product is packed it will be delivered to your nearby locality you can directly visit the to buy the product.
+                        a.btn(href="#")
+                           span.btn__text Shop Now
+                           span.btn__image
+            include src/pug/_products.pug
+
+            section.testimonial
+               .container
+                  .testimonial__inner
+                     .testimonial__top
+                        span.subtitle Testimonial
+                        h3 What Our Customer Saying?
+                        .testimonial__review
+                           span.testimonial__photo
+                           span.testimonial__stars
+                           p.text The quality of organic produce is extremely high, the service is second to none and the taste of the food takes me back to my childhood when we were growing our own.
+                           span.testimonial__name Sara Taylor
+                           span.testimonial__sub Consumer
+                     .testimonial__bottom
+                        .testimonial__info
+                           mixin circle(num, sub)
+                              .testimonial__info--circle
+                                 span.testimonial__info--num= num
+                                 span.testimonial__info--sub= sub
+                           +circle('100%', 'Organic')
+                           +circle('285', 'Active Product' )
+                           +circle('385+', 'Organic Orchads' )
+                           +circle('25+', 'Years of Farming' )
+            include src/pug/_offers.pug
+            section.eco
+               .container
+                  .eco__inner
+                     .eco__image
+                        img(src="./images/eco.jpg", alt="Eco Friendly")
+                     .eco__information
+                        .eco__wrap
+                           span.subtitle Eco Friendly
+                           h4 From Our Farm<br>To Your Home.
+                           .eco__sub Choose Your Products
+                           p.text In our listing, we have several collections of organic products. This is the place where you need to choose the product you want.
+                           .eco__sub Farmers Will Produce it
+                           p.text The Product that you ordered will be verified that we have or not if have we will start to move on with the next step.
+                           .eco__sub We Can Delivery Too
+                           p.text If you are not comfortable going to the nearby market place we also will deliver your product to your doorstep.
+
+            section.pages#pages
+               .container
+                  .pages__inner
+                     .pages__col
+                        .pages__img
+                           img(src="./images/page1.jpg", alt="page1")
+                        span.pages__title Fruit Juice
+                     .pages__col
+                        .pages__img
+                           img(src="./images/page2.jpg", alt="page2")
+                        span.pages__title Organic Food
+                     .pages__col
+                        .pages__img
+                           img(src="./images/page3.jpg", alt="page3")
+                        span.pages__title Nuts Cookies
+            section.subscribe
+               .container
+                  .subscribe__inner
+                     .subscribe__image
+                        img(src="./images/form-bg.png", alt="Form")
+                     .subscribe__content
+                        h2 Subscribe Our <br>Newsletter
+                        form
+                           input(type="email" name="email" placeholder="Enter your email address")
+                           a.btn(href="#")
+                              span.btn__text Subscribe
+                              span.btn__image
+         include src/pug/_footer.pug
+
+      script(src="https://code.jquery.com/jquery-3.6.4.min.js")
+      script(src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js")
+      script(src="./script.js")
