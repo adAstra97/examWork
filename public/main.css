@@ -310,6 +310,9 @@ h5 {
   display: none;
 }
 @media (max-width: 877px) {
+  #menu-toggle:checked ~ .menu-btn {
+    z-index: 1200;
+  }
   #menu-toggle:checked ~ .menu-btn > span {
     -webkit-transform: rotate(45deg);
             transform: rotate(45deg);
@@ -575,7 +578,7 @@ h5 {
     background: rgb(242, 240, 241);
     background: -webkit-gradient(linear, left top, left bottom, from(rgb(242, 240, 241)), to(rgb(239, 246, 241)));
     background: linear-gradient(180deg, rgb(242, 240, 241) 0%, rgb(239, 246, 241) 100%);
-    z-index: 1000;
+    z-index: 1150;
     -webkit-animation: 0.25s linear menu;
             animation: 0.25s linear menu;
   }
@@ -665,7 +668,7 @@ h5 {
             transform: translateY(-50%);
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
-    z-index: 1000;
+    z-index: 1200;
     border: 3px solid transparent;
     padding: 5px 20px 5px 10px;
   }

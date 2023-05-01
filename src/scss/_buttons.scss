@@ -63,6 +63,7 @@
    display: none;
    @media (max-width: 877px) {
       &:checked ~ .menu-btn {
+         z-index: 1200;
          & > span {
             transform: rotate(45deg);
             background-color: $defaultColor;
